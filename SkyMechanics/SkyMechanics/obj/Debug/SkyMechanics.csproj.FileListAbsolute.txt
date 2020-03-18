@@ -1,0 +1,12 @@
+D:\!!!OLEG\!!!WORK\Projects\SkyMechanics\SkyMechanics\bin\Debug\SkyMechanics.exe.config
+D:\!!!OLEG\!!!WORK\Projects\SkyMechanics\SkyMechanics\bin\Debug\SkyMechanics.exe
+D:\!!!OLEG\!!!WORK\Projects\SkyMechanics\SkyMechanics\bin\Debug\SkyMechanics.pdb
+D:\!!!OLEG\!!!WORK\Projects\SkyMechanics\SkyMechanics\bin\Debug\OpenTK.dll
+D:\!!!OLEG\!!!WORK\Projects\SkyMechanics\SkyMechanics\bin\Debug\sfml-audio.dll
+D:\!!!OLEG\!!!WORK\Projects\SkyMechanics\SkyMechanics\bin\Debug\sfml-graphics.dll
+D:\!!!OLEG\!!!WORK\Projects\SkyMechanics\SkyMechanics\bin\Debug\sfml-system.dll
+D:\!!!OLEG\!!!WORK\Projects\SkyMechanics\SkyMechanics\bin\Debug\sfml-window.dll
+D:\!!!OLEG\!!!WORK\Projects\SkyMechanics\SkyMechanics\obj\Debug\SkyMechanics.csprojAssemblyReference.cache
+D:\!!!OLEG\!!!WORK\Projects\SkyMechanics\SkyMechanics\obj\Debug\SkyMechanics.csproj.CopyComplete
+D:\!!!OLEG\!!!WORK\Projects\SkyMechanics\SkyMechanics\obj\Debug\SkyMechanics.exe
+D:\!!!OLEG\!!!WORK\Projects\SkyMechanics\SkyMechanics\obj\Debug\SkyMechanics.pdb

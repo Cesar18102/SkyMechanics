@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkyMechanics", "SkyMechanics\SkyMechanics.csproj", "{905FC4B1-ADBA-4242-8B15-B6A8812FA834}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{905FC4B1-ADBA-4242-8B15-B6A8812FA834}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{905FC4B1-ADBA-4242-8B15-B6A8812FA834}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{905FC4B1-ADBA-4242-8B15-B6A8812FA834}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{905FC4B1-ADBA-4242-8B15-B6A8812FA834}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D68C09C6-7104-444A-9926-C293B06F47A9}
+	EndGlobalSection
+EndGlobal
