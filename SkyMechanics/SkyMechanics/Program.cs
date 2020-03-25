@@ -1,6 +1,6 @@
 ﻿using SFML.Graphics;
+
 using SkyMechanics.Geometry;
-using System;
 
 namespace SkyMechanics
 {
@@ -10,27 +10,22 @@ namespace SkyMechanics
         {
             UniverseDrawable universe = new UniverseDrawable((skyObject, skyObjectOther) =>
             {
-                const double G = 0.67E-11;
                 Vector unityPowerVector = new Vector(skyObject.Position, skyObjectOther.Position).GetUnityVector();
                 double distance = skyObject.Position.LengthTo(skyObjectOther.Position);
-                return (unityPowerVector * (G * skyObjectOther.Mass / (distance * distance)), 
-                        -unityPowerVector * (G * skyObject.Mass / (distance * distance)));
+                return (unityPowerVector * (SkyMath.G * skyObjectOther.Mass / (distance * distance)),
+                        -unityPowerVector * (SkyMath.G * skyObject.Mass / (distance * distance)));
             });
 
-            //SkyObjectDrawable Solar1 = new SkyObjectDrawable(2E17, 5, Color.Green, new Point(500, 500), new Vector(-75, 0));
-            //SkyObjectDrawable Solar2 = new SkyObjectDrawable(3E17, 5, Color.Red, new Point(567, 600), new Vector(100, 0));
+            SkyObjectDrawable Solar = new SkyObjectDrawable("SUN1", 2E17, 5, new Point(300, -100), Color.Green);
+            SkyObjectDrawable Earth = new SkyObjectDrawable("EARTH", 8E12, 5, new Point(300, 200), Solar, Color.Blue);
+            SkyObjectDrawable Mars = new SkyObjectDrawable("MARS", 9E13, 5, new Point(300, 220), Solar, Color.Red);
 
-            SkyObjectDrawable Earth = new SkyObjectDrawable(3E15, 5, Color.Blue, new Point(500, 0), new Vector(0, 0));
-            SkyObjectDrawable Moon = new SkyObjectDrawable(3E3, 5, Color.Yellow, new Point(500, 200), new Vector(9.4, 0));
-
-            //universe.SkyObjects.Add(Solar1);
-            //universe.SkyObjects.Add(Solar2);
-
+            universe.SkyObjects.Add(Solar);
             universe.SkyObjects.Add(Earth);
-            universe.SkyObjects.Add(Moon);
+            universe.SkyObjects.Add(Mars);
 
             Simulation simulation = new Simulation("test", 1.5f, 2f, Color.Black, universe);
-            simulation.LookAt(Earth);
+            simulation.LookAt(Solar);
             simulation.Start();
         }
     }

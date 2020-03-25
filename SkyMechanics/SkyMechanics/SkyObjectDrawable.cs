@@ -13,10 +13,22 @@ namespace SkyMechanics
         public Color BodyColor { get; private set; }
         public List<Point> Path { get; private set; } = new List<Point>();
 
-        public SkyObjectDrawable(double mass, double radius, Color bodyColor,
-                                 Point initPosition, Vector initSpeed = null, 
-                                 Vector initAcceleration = null) : 
-            base(mass, radius, initPosition, initSpeed, initAcceleration) => BodyColor = bodyColor;
+        public SkyObjectDrawable(string name, double mass, double radius, 
+                                 Point initPosition, Color bodyColor) :
+            base(name, mass, radius, initPosition) => BodyColor = bodyColor;
+
+        public SkyObjectDrawable(string name, double mass, double radius,
+                                 Point initPosition, Vector initSpeed, Color bodyColor) :
+            base(name, mass, radius, initPosition, initSpeed) => BodyColor = bodyColor;
+
+        public SkyObjectDrawable(string name, double mass, double radius,
+                                 Point initPosition, SkyObject parentSun, Color bodyColor) :
+            base(name, mass, radius, initPosition, parentSun) => BodyColor = bodyColor;
+
+        public SkyObjectDrawable(string name, double mass, double radius,
+                                 Point initPosition, Vector initSpeed,
+                                 SkyObject parentSun, Color bodyColor) :
+            base(name, mass, radius, initPosition, initSpeed, parentSun) => BodyColor = bodyColor;
 
         public override void Update(double timeElapsed, Vector power)
         {
@@ -33,14 +45,15 @@ namespace SkyMechanics
             };
 
             shape.Draw(target, states);
-            target.Draw(Path.Select(pathPoint => new Vertex(new Vector2f((float)pathPoint.X, (float)pathPoint.Y), BodyColor)).ToArray(), PrimitiveType.LineStrip, states);
-
-            /*Point accelerationEndPoint = Position + Acceleration;
-            Vertex[] accelerationVectorVertices = new Vertex[] {
-                new Vertex(new Vector2f((float)Position.X, (float)Position.Y), BodyColor),
-                new Vertex(new Vector2f((float)accelerationEndPoint.X, (float)accelerationEndPoint.Y), BodyColor)
-            };
-            target.Draw(accelerationVectorVertices, PrimitiveType.LineStrip, states);*/
+            target.Draw(
+                Path.Select(pathPoint => 
+                    new Vertex(
+                        new Vector2f((float)pathPoint.X, (float)pathPoint.Y), 
+                        BodyColor
+                    )
+                ).ToArray(), 
+                PrimitiveType.LineStrip, states
+            );
         }
     }
 }

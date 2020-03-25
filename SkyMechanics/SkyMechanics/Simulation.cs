@@ -73,7 +73,10 @@ namespace SkyMechanics
                 Window.SetView(temp);
 
                 Window.Clear(BackColor);
-                Universe.Update(CurrentSpeed / 60.0);//elapsed
+
+                for (int i = 0; i < CurrentSpeed; i++)
+                    Universe.Update(1 / 60.0);// elapsed * CurrentSpeed
+
                 Window.Draw(Universe);
                 Window.Display();
             }
